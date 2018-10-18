@@ -17,9 +17,9 @@ type testConfigs struct {
 }
 
 func main() {
-	configManager := NewConfigManager()
 	configs := &testConfigs{}
-	configManager.LoadConfigs("service_configs.json", configs)
+	cm := configManager.New()
+	cm.LoadConfigs("service_configs.json", configs)
 	fmt.Println(configs.Config1)
 	fmt.Println(configs.Config2)
 }

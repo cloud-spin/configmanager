@@ -11,9 +11,9 @@ type Configs struct {
 }
 
 func Example() {
-	configManager := configmanager.NewConfigManager()
 	configs := &Configs{}
-	configManager.LoadConfigs("testdata/config_manager_valid_configs.json", configs)
+	cm := configmanager.New()
+	cm.LoadConfigs("testdata/config_manager_valid_configs.json", configs)
 	fmt.Println(configs.Config1)
 	// Output: value1
 }

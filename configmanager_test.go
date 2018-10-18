@@ -30,7 +30,7 @@ type testConfigs struct {
 }
 
 func TestLoadConfigsWithValidFileShouldLoadConfigs(t *testing.T) {
-	configManager := NewConfigManager()
+	configManager := New()
 	configs := &testConfigs{}
 	configManager.LoadConfigs("testdata/config_manager_valid_configs.json", configs)
 	if configs.Config1 != "value1" {
@@ -48,7 +48,7 @@ func TestLoadConfigsWithInvalidFileShouldPanic(t *testing.T) {
 		}
 	}()
 
-	configManager := NewConfigManager()
+	configManager := New()
 	configs := &testConfigs{}
 	configManager.LoadConfigs("testdata/config_manager_invalid_configs.json", configs)
 }
@@ -60,7 +60,7 @@ func TestLoadConfigsWithNonExistentFileShouldPanic(t *testing.T) {
 		}
 	}()
 
-	configManager := NewConfigManager()
+	configManager := New()
 	configs := &testConfigs{}
 	configManager.LoadConfigs("testdata/config_manager_nonexistent_configs.json", configs)
 }

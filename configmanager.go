@@ -34,8 +34,8 @@ type ConfigManager interface {
 type ConfigManagerImpl struct {
 }
 
-// NewConfigManager creates a new instance of ConfigManager.
-func NewConfigManager() ConfigManager {
+// New creates a new instance of ConfigManager.
+func New() ConfigManager {
 	return &ConfigManagerImpl{}
 }
 
